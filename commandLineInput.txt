@@ -1,0 +1,13 @@
+// First run server.js
+
+node server.js or npm start
+
+// Publisher command:
+
+(for i in `seq 1 10000`; do sleep 1; echo New Stock Price; done) | NAME=STOCK_BROKER 
+TOPIC_ID=stock_prices node publisher.js
+
+
+// Subscriber command:
+
+TOPIC_ID=stock_prices node subscriber.js
